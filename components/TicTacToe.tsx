@@ -38,6 +38,8 @@ export default function TicTacToe() {
     ? `Match is Draw`
     : `Next player: ${isXturn ? "X" : "O"}`;
 
+    const textColor = status.includes("Winner") ? "text-green-500" : status.includes("Draw") ? "text-red-500" : "text-white";  
+
   return (
     <div className='flex flex-col items-center justify-center min-h-screen'>
       <h1 className="text-4xl font-bold mb-6 text-blue-700">Tic-Tac-Toe</h1>
@@ -53,8 +55,8 @@ export default function TicTacToe() {
         ))}
       </div>
       <div
-        className={`mt-4 text-xl font-semibold text-white ${
-          winner ? " animate-bounce text-green-500" : boardfull ? "text-red-500" :""
+        className={`mt-4 text-xl font-semibold ${textColor} ${
+          winner ? "text-green-500 animate-bounce " : boardfull ? "text-red-500" :""
         }`}
       >
         {status}
