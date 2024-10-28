@@ -9,7 +9,7 @@ const decideWinner = (squares: any[]) => {
   ];
 
   for (let [a, b, c] of lines) {
-    if ( squares[a] === squares[b] && squares[a] === squares[c]) {
+    if ( squares[a] && squares[a]=== squares[b] && squares[a] === squares[c]) {
       return squares[a];
     }
   }
